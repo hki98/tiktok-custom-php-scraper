@@ -35,3 +35,15 @@ As I mentioned above, I have made this script to only scrape the data that I nee
   "video_id": "0123456789012345678",
 }
 ```
+
+## Notice: TikTok is a Trademark of ByteDance Ltd.
+
+This project is not affiliated with, endorsed, or sponsored by ByteDance Ltd., the creator of TikTok. TikTok® is a registered trademark of ByteDance Ltd.
+
+The use of the TikTok name, logo, or any related trademarks or intellectual property is for descriptive purposes only, and it does not imply any endorsement or affiliation with this project.
+
+We respect intellectual property rights and are committed to ensuring that our website/application/project complies with all applicable copyright and trademark laws. If you believe that any content on this platform infringes on TikTok's trademark or copyright, please contact us promptly so that we can address the concern.
+
+We do not intend to infringe upon any copyrights or trademarks associated with TikTok, and any use of TikTok-related terms is solely for the purpose of providing information and services related to the TikTok platform.
+
+Thank you for your understanding and cooperation.
