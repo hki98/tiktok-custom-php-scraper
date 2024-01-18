@@ -6,6 +6,20 @@
 > Maybe you guys want the same thing, I hope it will be useful for someone else. Enjoy!
 
 ## Usage:
+- Step 1:
 ```bash
 git clone https://github.com/hki98/tiktok-custom-php-scraper.git
 ```
+- Step 2:
+  Upload the downloaded files to your web hosting account.
+- Step 3:
+  Make sure to edit this:
+  ```php
+  header("Access-Control-Allow-Origin: YOUR_DOMAIN_HERE");
+  ```
+And that's all!
+
+- Now you can test the script by sending a request to:
+  ```bash
+  https://yourdomain.com/path_to_api/api.php?url=[TIKTOK_VIDEO_URL]
+  ```
