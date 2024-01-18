@@ -30,7 +30,7 @@ As I mentioned above, I have made this script to only scrape the data that I nee
 ```json
 {
   "status": "ok",
-  "link": "https://www.tiktok.com/@hki98/video/0123456789012345678,
+  "link": "https://www.tiktok.com/@hki98/video/0123456789012345678",
   "username": "hki98",
   "video_id": "0123456789012345678",
 }
