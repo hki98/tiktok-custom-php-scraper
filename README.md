@@ -36,6 +36,10 @@ As I mentioned above, I have made this script to only scrape the data that I nee
 }
 ```
 
+## Packages Used:
+- [``` GuzzleHTTP ```](https://docs.guzzlephp.org/en/stable/)
+- [``` Simple HTML DOM ```](https://simplehtmldom.sourceforge.io/docs/1.9/index.html)
+
 ## Notice: TikTok is a Trademark of ByteDance Ltd.
 
 This project is not affiliated with, endorsed, or sponsored by ByteDance Ltd., the creator of TikTok. TikTok® is a registered trademark of ByteDance Ltd.
