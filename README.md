@@ -7,9 +7,9 @@
 
 ## Usage:
 - Step 1:
-```bash
-git clone https://github.com/hki98/tiktok-custom-php-scraper.git
-```
+  ```bash
+  git clone https://github.com/hki98/tiktok-custom-php-scraper.git
+  ```
 
 - Step 2:
   Upload the downloaded files to your web hosting account.
