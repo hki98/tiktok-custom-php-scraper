@@ -10,8 +10,10 @@
 ```bash
 git clone https://github.com/hki98/tiktok-custom-php-scraper.git
 ```
+
 - Step 2:
   Upload the downloaded files to your web hosting account.
+  
 - Step 3:
   Make sure to edit this:
   ```php
