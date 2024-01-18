@@ -20,6 +20,6 @@ git clone https://github.com/hki98/tiktok-custom-php-scraper.git
 And that's all!
 
 - Now you can test the script by sending a request to:
-  ```bash
+  ```php
   https://yourdomain.com/path_to_api/api.php?url=[TIKTOK_VIDEO_URL]
   ```
