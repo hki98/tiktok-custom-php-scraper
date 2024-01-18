@@ -14,7 +14,7 @@
 * Note: This script can be customized to scrape any additional data you want for a TikTok Video
 * I have only implemented the features that fits my needs.
 *
-* @author: Haian K. Ibrahim (GitHub: @hki98)
+* @author: Haian K. Ibrahim (GitHub : @hki98)
 
 * @link: https://linkedin.com/in/haian-k-ibrahim
 */
