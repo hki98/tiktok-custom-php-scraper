@@ -24,3 +24,14 @@ And that's all!
   ```php
   https://yourdomain.com/path_to_api/api.php?url=[TIKTOK_VIDEO_URL]
   ```
+
+## Returned Data:
+As I mentioned above, I have made this script to only scrape the data that I need. So, It will return only three values for the given TikTok video URL:
+```json
+{
+  "status": "ok",
+  "link": "https://www.tiktok.com/@hki98/video/0123456789012345678,
+  "username": "hki98",
+  "video_id": "0123456789012345678",
+}
+```
