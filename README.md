@@ -53,3 +53,6 @@ We respect intellectual property rights and are committed to ensuring that our p
 We do not intend to infringe upon any copyrights or trademarks associated with TikTok, and any use of TikTok-related terms is solely for the purpose of providing information and services related to the TikTok platform.
 
 Thank you for your understanding and cooperation.
+
+---
+I'm open to work, let's connect: [Haian K. Ibrahim](https://linkedin.com/in/haian-k-ibrahim) | [contact [at] haian.me](mailto:contact@haian.me)
