@@ -55,7 +55,7 @@ if (isset($url) && !empty($url) && str_contains($url, 'tiktok.com')) {
         // TikTok removed og:url and most of OG meta tags and moved to JSON
         // Objects included in the video page at the very bottom.
         // The SCRIPT ID is: [__UNIVERSAL_DATA_FOR_REHYDRATION__]
-        // We are searching for this script in the exracted HTML using ID
+        // We are searching for this script in the exracted HTML using ID.
         $html = $simpleHTMLDom->find('script[id=__UNIVERSAL_DATA_FOR_REHYDRATION__]', 0);
 
         // Now after we found the script, it needs some cleaning to get
