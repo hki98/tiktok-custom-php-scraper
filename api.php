@@ -54,8 +54,8 @@ if (isset($url) && !empty($url) && str_contains($url, 'tiktok.com')) {
 
         // TikTok removed og:url and most of OG meta tags and moved to JSON
         // Objects included in the video page at the very bottom.
-        // The SCRIPT ID is: [__UNIVERSAL_DATA_FOR_REHYDRATION__]
-        // We are searching for this script in the exracted HTML using ID.
+        // The script id is: [__UNIVERSAL_DATA_FOR_REHYDRATION__]
+        // We are searching for this script in the exracted HTML using ID
         $html = $simpleHTMLDom->find('script[id=__UNIVERSAL_DATA_FOR_REHYDRATION__]', 0);
 
         // Now after we found the script, it needs some cleaning to get
@@ -72,31 +72,80 @@ if (isset($url) && !empty($url) && str_contains($url, 'tiktok.com')) {
         // Now loop through the JSON content and extract JSON Objects
         foreach ($decode as $object) {
             // Get the JSON object named [seo.abtest] which contains the canonical URL
-            // of the given video, then we will extract it and do some clean up.
-            $json = json_encode($object['seo.abtest'], true);
-
+            // of the given video. This is the clean video URL without any additional
+            // parameters because we do not need them.
+            $seo = json_encode($object['seo.abtest'], true);
+            
+            // Get the JSON object named [webapp.video-details] which contains the full details
+            // of the given video.
+            $details = json_encode($object['webapp.video-detail'], true);
+            
             // Decode the contents of [seo.abtest] JSON Object
-            $jdec = json_decode($json);
-
-            // Now let's clean the canonical URL. First, explode string at @ mark
-            $canonical = explode('/@', $jdec->canonical);
-
-            // Second, explode canonical string at [/video/] and this will
-            // give us the username of the video owner at the first index $username[0]
-            $username = explode("/video/", $canonical[1]);
-
-            // Third, explode username string at [?] mark to remove unwanted
-            // URL analytics parameters and this will give us the ID of the
-            // video at the first index $video_id[0]
-            $video_id = explode('?', $username[1]);
-
+            $seoDec = json_decode($seo);
+            
+            // Decode the contents of [webapp.video-details] JSON Object
+            $detailsDec = json_decode($details);
+            
+            // Video canonical URL
+            $canonical = $seoDec->canonical;
+            
+            // Video ID
+            $video_id = $detailsDec->itemInfo->itemStruct->id;
+            
+            // Video Description
+            $video_desc = $detailsDec->itemInfo->itemStruct->desc;
+            
+            // Video Author Name
+            $user = $detailsDec->itemInfo->itemStruct->author->nickname;
+            
+            // Video Author Username
+            $username = $detailsDec->itemInfo->itemStruct->author->uniqueId;
+            
+            // Video Author ID
+            $user_id = $detailsDec->itemInfo->itemStruct->author->id;
+            
+            // Static Video Thumbnail
+            $thumbnail_static = $detailsDec->itemInfo->itemStruct->video->cover;
+            
+            // Dynamic Video Thumbnail
+            $thumbnail_gif = $detailsDec->itemInfo->itemStruct->video->dynamicCover;
+            
+            // Here we need to check if any thumbnails (static and dynamic) is null
+            // to prevent any error, because some videos does not have a dynamic one.
+            $thumbnail = ($thumbnail_gif !== null) ? $thumbnail_gif : $thumbnail_static;
+            
+            // Video Views Count
+            $video_views = $detailsDec->itemInfo->itemStruct->stats->playCount;
+            
+            // Video Likes Count
+            $video_likes = $detailsDec->itemInfo->itemStruct->stats->diggCount;
+            
+            // Video Comments Count
+            $video_comments = $detailsDec->itemInfo->itemStruct->stats->commentCount;
+            
+            // Video Shares Count
+            $video_shares = $detailsDec->itemInfo->itemStruct->stats->shareCount;
+            
+            // Video Favorites Count
+            $video_favorites = $detailsDec->itemInfo->itemStruct->stats->collectCount;
+            
             // Now everything is done! Return the video details.
             $result = array(
                 'status' => 'ok',
-                'link' => $jdec->canonical,
-                'username' => $username[0],
-                'video_id' => $video_id[0],
+                'link' => $canonical,
+                'user' => $user,
+                'username' => $username,
+                'user_id' => $user_id,
+                'video_id' => $video_id,
+                'video_desc' => $video_desc,
+                'thumbnail' => $thumbnail,
+                'views' => $video_views,
+                'likes' => $video_likes,
+                'comments' => $video_comments,
+                'shares' => $video_shares,
+                'favorites' => $video_favorites,
             );
+            
         }
     } catch (GuzzleException $e) {
         // Return error message with details
