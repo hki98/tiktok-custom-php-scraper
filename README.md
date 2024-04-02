@@ -22,6 +22,7 @@ $url = $_GET['url']; // Assuming $url is obtained from user input
 $scraper = new TikTokScraper($url);
 $result = $scraper->scrapeVideoDetails();
 echo json_encode($result, JSON_PRETTY_PRINT);
+```
 
 ## Example:
 ```php
