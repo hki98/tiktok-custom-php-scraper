@@ -24,6 +24,10 @@ And that's all!
   ```php
   https://yourdomain.com/path_to_api/api.php?url=[TIKTOK_VIDEO_URL]
   ```
+  **Supported Links:**
+  - https://www.tiktok.com/@username/video/012345678901234
+  - https://vt.tiktok.com/aBcDeFgH
+  - https://vm.tiktok.com/aBcDeFgH
 
 ## Returned Data:
 As I mentioned above, I have made this script to only scrape the data that I need. So, It will return only these values for the given TikTok video URL:
