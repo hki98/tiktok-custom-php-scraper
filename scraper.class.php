@@ -1,5 +1,4 @@
 <?php
-
 /*
 * @project: TikTok Custom PHP Scraper
 *
