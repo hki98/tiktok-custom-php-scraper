@@ -20,6 +20,8 @@
 
 namespace CustomTikTokScraper;
 
+require 'simple_html_dom.php';
+
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
