@@ -29,7 +29,6 @@ And that's all!
 
 ## Returned Data:
 As I mentioned above, I have made this script to only scrape the data that I need. So, It will return only these values for the given TikTok video URL:
-(We can add any additional data if we need)
 ```json
 {
   "status": "ok",
