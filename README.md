@@ -2,30 +2,26 @@
 
 **Hi there!<br><br>I have many TikTok releated web projects and I was looking for a TikTok Custom PHP API or Scraper, All what I found was paid, limited scripts and most of them are in Python. I do not want so many features, I just want a simple script which I give it a TikTok Video URL then I want to get few details about it: Canonical URL, Username & Video ID That is it!<br><br>So I decided to write my own custom PHP script to get these details.<br><br>Maybe you guys want the same thing, I hope it will be useful for someone else. Enjoy!<br><br>Note: This script can be customized to scrape any additional data you want for a TikTok Video. I have only implemented the features that fits my needs.**
 
-## Usage:
-- **Step 1**:
-  ```bash
-  git clone https://github.com/hki98/tiktok-custom-php-scraper.git
-  ```
+## Installation
 
-- **Step 2**:
-  Upload the downloaded files to your web hosting account.
-  
-- **Step 3**:
-  Make sure to edit this:
-  ```php
-  header("Access-Control-Allow-Origin: YOUR_DOMAIN_HERE");
-  ```
-And that's all!
+1. Clone this repository to your local machine.
+2. Require the necessary dependencies by running `composer install`.
 
-- Now you can test the script by sending a request to:
-  ```php
-  https://yourdomain.com/path_to_api/api.php?url=[TIKTOK_VIDEO_URL]
-  ```
-  **Supported Links:**
-  - https://www.tiktok.com/@username/video/012345678901234
-  - https://vt.tiktok.com/aBcDeFgH
-  - https://vm.tiktok.com/aBcDeFgH
+## Usage
+
+Instantiate the `TikTokScraper` class with the TikTok video URL and then call the `scrapeVideoDetails()` method to get the details of the video.
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use YourNamespace\TikTokScraper;
+
+$url = $_GET['url']; // Assuming $url is obtained from user input
+$scraper = new TikTokScraper($url);
+$result = $scraper->scrapeVideoDetails();
+echo json_encode($result, JSON_PRETTY_PRINT);
 
 ## Returned Data:
 As I mentioned above, I have made this script to only scrape the data that I need. So, It will return only these values for the given TikTok video URL:
@@ -46,6 +42,10 @@ As I mentioned above, I have made this script to only scrape the data that I nee
   "favorites": "112"
 }
 ```
+**Supported Links:**
+  - https://www.tiktok.com/@username/video/012345678901234
+  - https://vt.tiktok.com/aBcDeFgH
+  - https://vm.tiktok.com/aBcDeFgH
 
 ## Used:
 - [PHP](https://php.net/)
