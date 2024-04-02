@@ -30,9 +30,18 @@ As I mentioned above, I have made this script to only scrape the data that I nee
 ```json
 {
   "status": "ok",
-  "link": "https://www.tiktok.com/@hki98/video/0123456789012345678",
-  "username": "hki98",
-  "video_id": "0123456789012345678",
+  "link": "https://www.tiktok.com/@tiktok/video/7353002700935679278",
+  "user": "TikTok",
+  "username": "tiktok",
+  "user_id": "107955",
+  "video_id": "7353002700935679278",
+  "video_desc": "This is your sign to keep doing the things that ignite your soul ✨ You’re destined to be your best self. #WomensMonth #PowerOfWe #JustLikeThat #Manifesting",
+  "thumbnail": "https://p16-sign.tiktokcdn-us.com/obj/tos-useast5-p-0068-tx/owxlSFD9VCDevQAvkWEIjzCAOA1gdzARCmfOVA?x-expires=1712268000&x-signature=oZRVD2O2Kr1hr96YoN2r%2F15GKoM%3D",
+  "views": 78900,
+  "likes": 1413,
+  "comments": 297,
+  "shares": 64,
+  "favorites": "112"
 }
 ```
 
