@@ -24,14 +24,6 @@ $result = $scraper->scrapeVideoDetails();
 echo json_encode($result, JSON_PRETTY_PRINT);
 ```
 
-## Example:
-```php
-$url = 'https://www.tiktok.com/@username/video/1234567890';
-$scraper = new TikTokScraper($url);
-$result = $scraper->scrapeVideoDetails();
-echo json_encode($result, JSON_PRETTY_PRINT);
-```
-
 ## Returned Data:
 As I mentioned above, I have made this script to only scrape the data that I need. So, It will return only these values for the given TikTok video URL:
 ```json
