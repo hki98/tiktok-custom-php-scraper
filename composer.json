@@ -3,5 +3,8 @@
     "description": "Custom TikTok Scraper in PHP",
     "require": {
         "guzzlehttp/guzzle": "^7.8"
-    }
+    },
+    "license": [
+        "GPL-3.0"
+    ]
 }
