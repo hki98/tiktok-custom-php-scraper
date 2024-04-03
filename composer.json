@@ -1,4 +1,6 @@
 {
+    "name": "hki98/tiktok-custom-php-scraper",
+    "description": "Custom TikTok Scraper in PHP",
     "require": {
         "guzzlehttp/guzzle": "^7.8"
     }
