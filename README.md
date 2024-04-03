@@ -5,6 +5,9 @@
 ## Installation
 
 1. Clone this repository to your local machine.
+ ```bash
+composer require hki98/tiktok-custom-php-scraper
+ ```  
 2. Require the necessary dependencies by running `composer install`.
 
 ## Usage
