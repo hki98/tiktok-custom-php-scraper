@@ -4,7 +4,19 @@
     "require": {
         "guzzlehttp/guzzle": "^7.8"
     },
-    "license": [
-        "GPL-3.0"
+    "keywords": [
+        "tiktok",
+        "tiktok scraper",
+        "tiktok api",
+        "php scraper",
+        "tiktok php api"
+    ],
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Haian K. Ibrahim",
+            "email": "contact@haian.me",
+            "homepage": "https://github.com/hki98"
+        }
     ]
 }
