@@ -1,7 +1,9 @@
 <?php
 /*
 * @project: TikTok Custom PHP Scraper
+*
 * Website: https://github.com/hki98/tiktok-custom-php-scraper
+*
 * @description: I have many TikTok releated web projects and I was looking
 * for a TikTok Custom PHP API or Scraper, All what I found was paid,
 * limited scripts and most of them are in Python. I do not want so many
@@ -125,22 +127,31 @@ class TikTokScraper
                     // Video Favorites Count
                     $video_favorites = $detailsDec->itemInfo->itemStruct->stats->collectCount;
 
-                    // Now everything is done! Return the video details.
-                    return array(
-                        'status' => 'ok',
-                        'link' => $canonical,
-                        'user' => $user,
-                        'username' => $username,
-                        'user_id' => $user_id,
-                        'video_id' => $video_id,
-                        'video_desc' => $video_desc,
-                        'thumbnail' => $thumbnail,
-                        'views' => $video_views,
-                        'likes' => $video_likes,
-                        'comments' => $video_comments,
-                        'shares' => $video_shares,
-                        'favorites' => $video_favorites,
-                    );
+                    // Validation
+                    if (empty($video_id) || empty($user_id) || empty($username)) {
+                        // Return error message if the URL is invalid
+                        return array(
+                            'status' => 'error',
+                            'message' => 'Please enter a valid TikTok URL!',
+                        );
+                    } else {
+                        // Now everything is done! Return the video details.
+                        return array(
+                            'status' => 'ok',
+                            'link' => $canonical,
+                            'user' => $user,
+                            'username' => $username,
+                            'user_id' => $user_id,
+                            'video_id' => $video_id,
+                            'video_desc' => $video_desc,
+                            'thumbnail' => $thumbnail,
+                            'views' => $video_views,
+                            'likes' => $video_likes,
+                            'comments' => $video_comments,
+                            'shares' => $video_shares,
+                            'favorites' => $video_favorites,
+                        );
+                    }
                 }
             } catch (GuzzleException $e) {
                 // Return error message with details
