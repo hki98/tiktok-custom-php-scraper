@@ -47,7 +47,7 @@ class TikTokScraper
     public function scrapeVideoDetails()
     {
         if (!$this->isValidUrl($this->url)) {
-            return $this->createErrorResponse('Please enter a valid TikTok URL!');
+            return $this->createErrorResponse('Please enter a valid TikTok URL!', 0);
         }
 
         try {
@@ -56,13 +56,13 @@ class TikTokScraper
             $videoDetails = $this->extractVideoDetailsFromJson($scriptContent);
 
             if (!$this->isValidVideoDetails($videoDetails)) {
-                return $this->createErrorResponse('Please enter a valid TikTok URL!');
+                return $this->createErrorResponse('Please enter a valid TikTok URL!', 0);
             }
 
             return $this->createSuccessResponse($videoDetails);
 
         } catch (GuzzleException $e) {
-            return $this->createErrorResponse('Something went wrong: ' . $e->getMessage());
+            return $this->createErrorResponse('Something went wrong: ' . $e->getMessage(), 2);
         }
     }
 
@@ -150,10 +150,11 @@ class TikTokScraper
      * @param string $message The error message.
      * @return array The error response.
      */
-    private function createErrorResponse($message)
+    private function createErrorResponse($message, $code)
     {
         return [
             'status' => 'error',
+            'code' => $code,
             'message' => $message,
         ];
     }
