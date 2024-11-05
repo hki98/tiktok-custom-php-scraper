@@ -16,7 +16,7 @@ Instantiate the `TikTokScraper` class with the TikTok video URL and then call th
 
 require 'vendor/autoload.php';
 
-use HKI98\TikTokScraper;
+use HKI\TikTokScraper;
 
 $url = $_GET['url']; // Assuming $url is obtained from user input
 $scraper = new TikTokScraper($url);
