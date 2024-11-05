@@ -18,7 +18,7 @@
 * @link: https://linkedin.com/in/haian-k-ibrahim
 */
 
-namespace HKI98;
+namespace HKI;
 
 require 'simple_html_dom.php';
 
