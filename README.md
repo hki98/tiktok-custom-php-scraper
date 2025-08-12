@@ -1,5 +1,5 @@
 # ⚠️ New Repo Moved Here ⚠️
-**This repo is no longer maintained, please use the new one below.**
+**👇🏻 This repo is no longer maintained, please use the new one below.**
 - [New Repo](https://github.com/haianibrahim/tiktok-scraper)
 
 # TikTok® Custom PHP Scraper
